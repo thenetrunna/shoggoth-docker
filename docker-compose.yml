@@ -1,0 +1,17 @@
+version: "3.8"
+
+volumes:
+  shoggoth_data:
+    name: shoggoth_data
+    driver: local
+
+services:
+  shoggoth:
+    container_name: shoggoth-node
+    restart: unless-stopped
+    build: .
+    volumes:
+      - shoggoth_data:/root/shoggoth
+    # Uncomment ports if you want to access the web interface via IP address rather than reverse proxy
+    #ports:
+      #- "6969:6969"
