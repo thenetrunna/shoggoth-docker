@@ -9,13 +9,13 @@ RUN apt-get update && \
 WORKDIR /root/shoggoth
 
 # Download Shoggoth binaries
-RUN wget https://shoggoth.systems/download/v0.1.7/shoggoth-v0.1.7-Linux-x86_64.zip
+RUN wget https://shog.ai/download/v0.2.1/shoggoth-v0.2.1-Linux-x86_64.zip
 
 # Verify checksum (replace 'checksum_here' with actual checksum)
-RUN echo "0b06fd6746d687e6f01ec65c39d00f5d04acd48c5036b521797ef79347f94a28 shoggoth-v0.1.7-Linux-x86_64.zip" | sha256sum -c -
+RUN echo "88464be35ad017fe11b21edf0f86aa8df84e8b53b6fd9b224df149873b8eafd3 shoggoth-v0.2.1-Linux-x86_64.zip" | sha256sum -c -
 
 # Unzip the binaries
-RUN unzip -o -q shoggoth-v0.1.7-Linux-x86_64.zip -d /root/shoggoth
+RUN unzip -o -q shoggoth-v0.2.1-Linux-x86_64.zip -d /root/shoggoth
 
 # Run the install script
 RUN ./scripts/install.sh
